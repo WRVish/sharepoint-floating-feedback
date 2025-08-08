@@ -1,0 +1,10 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.json",
+    "id": "e5828453-6447-4cf0-906d-495914656041",
+    "alias": "FloatingFeedbackApplicationCustomizer",
+    "componentType": "Extension",
+    "extensionType": "ApplicationCustomizer",
+    "version": "0.0.1",
+    "manifestVersion": 2,
+    "requiresCustomScript": false
+}

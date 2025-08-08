@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "floating-feedback-client-side-solution",
+    "id": "dad9fc17-669e-44cb-a2a2-08d5f6fc72de",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.22.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "floating-feedback description"
+      },
+      "longDescription": {
+        "default": "floating-feedback description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "floating-feedback Feature",
+        "description": "The feature that activates elements of the floating-feedback solution.",
+        "id": "5f9a3c7b-9bcc-45fb-8285-7ce66efb10f3",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/floating-feedback.sppkg"
+  }
+}

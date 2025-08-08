@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="FloatingFeedbackApplicationCustomizer"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ClientSideComponentId="e5828453-6447-4cf0-906d-495914656041"
+        ClientSideComponentProperties="{&quot;listName&quot;:&quot;Feedback&quot;,&quot;position&quot;:&quot;Bottom&quot;}">
+    </CustomAction>
+</Elements>

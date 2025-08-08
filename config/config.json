@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "floating-feedback-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/floatingFeedback/FloatingFeedbackWebPart.js",
+          "manifest": "./src/webparts/floatingFeedback/FloatingFeedbackWebPart.manifest.json"
+        }
+      ]
+    },
+    "floating-feedback-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/floatingFeedback/FloatingFeedbackApplicationCustomizer.js",
+          "manifest": "./src/extensions/floatingFeedback/FloatingFeedbackApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FloatingFeedbackWebPartStrings": "lib/webparts/floatingFeedback/loc/{locale}.js"
+  }
+}
