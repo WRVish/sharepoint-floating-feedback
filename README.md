@@ -2,6 +2,16 @@
 
 This guide details how to set up the "Feedback" list, build the solution, and deploy it to your SharePoint environment.
 
+## Screenshots
+
+### Floating Feedback Button
+![Floating Feedback Button](images/feedback-button.png)
+
+### Feedback Submission Form
+![Feedback Submission Form](images/feedback-form.png)
+
+---
+
 ## 1. SharePoint List Setup
 
 The extension automatically looks for a list named **"Feedback"**. You must create this list with the specific columns below before using the extension.
@@ -29,25 +39,59 @@ Navigate to **List Settings** or use the **Add column** button to create the fol
 
 ---
 
-## 2. Build & Package
+## 2. Toolchain & Build System
 
-To prepare the solution for deployment, run the following commands in your terminal (ensure you are in the project folder):
+This project uses modern SharePoint Framework (SPFx) toolchain components. It has transitioned from **Gulp** to **Heft** for build orchestration, task execution, and packaging:
 
-```bash
-# 1. Clean, build, and bundle for production
-gulp clean
-gulp bundle --ship
+- **SPFx Version**: `1.23.0`
+- **Build Orchestrator**: `@rushstack/heft` (v1.2.17)
+- **TypeScript Version**: `5.8.3` (compatible with `~5.8.0`)
+- **Node.js Environment**: Bundled locally in the `.node` directory (Node.js v22.11.0, npm v10.9.0)
 
-# 2. Package the solution (Creates the .sppkg file)
-gulp package-solution --ship
+---
+
+## 3. Environment Setup & Build
+
+This project uses a bundled local Node.js environment under the `.node` directory and **Heft** as the build tool.
+
+### Step 1: Set Up Node.js Environment (Temporarily in Terminal)
+
+Before running any npm or build commands, you must add the local `.node` directory to your terminal session's `PATH`.
+
+#### In PowerShell:
+```powershell
+$env:PATH = "$pwd\.node;" + $env:PATH
 ```
 
-This will create the package file at:
+#### In Command Prompt (CMD):
+```cmd
+set PATH=%CD%\.node;%PATH%
+```
+
+### Step 2: Build & Package
+
+Once your environment is set up, run the following commands to build and package the solution:
+
+```bash
+# 1. Install dependencies (if not done already)
+npm install
+
+# 2. Build the project
+npm run build
+
+# 3. Build & package the solution (Creates the .sppkg file for production)
+npx heft package-solution --production --clean
+
+# 4. Start local development (watch mode with local serve)
+npm run start
+```
+
+This will create the deployment package at:
 `sharepoint/solution/floating-feedback.sppkg`
 
 ---
 
-## 3. Deployment to App Catalog
+## 4. Deployment to App Catalog
 
 You need to upload the package to your Tenant App Catalog or Site Collection App Catalog.
 
@@ -61,7 +105,7 @@ You need to upload the package to your Tenant App Catalog or Site Collection App
 
 ---
 
-## 4. Install on Site
+## 5. Install on Site
 
 The extension will not appear until the App is "installed" on the specific site you want to use it on.
 
