@@ -160,8 +160,8 @@ export default class FloatingFeedback extends React.Component<IFloatingFeedbackP
                     type="button"
                     key={cat}
                     disabled={isSubmitting}
-                    aria-pressed={selectedCategories.includes(cat)}
-                    className={`${styles.categoryButton} ${selectedCategories.includes(cat) ? styles.categoryButtonSelected : ''}`}
+                    aria-pressed={selectedCategories.indexOf(cat) > -1}
+                    className={`${styles.categoryButton} ${selectedCategories.indexOf(cat) > -1 ? styles.categoryButtonSelected : ''}`}
                     onClick={() => this._toggleCategory(cat)}
                   >
                     {cat}

@@ -1,4 +1,4 @@
-﻿node_modules/
+node_modules/
 dist/
 lib/
 lib-commonjs/
@@ -11,3 +11,4 @@ sharepoint/solution/
 *.sppkg
 .DS_Store
 **/.DS_Store
+.node/
